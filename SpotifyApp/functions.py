@@ -86,9 +86,9 @@ def song_recommender(features):
         knn_loader = joblib.load('knn_model.joblib')
         
         # Load unwrangled dataset to match the song.
-        with ZipFile('df_rec_lookup.zip', 'r') as zip:
+        with ZipFile('SpotifyApp/df_rec_lookup.zip', 'r') as zip:
             zip.extractall()
-        df_rec_lookup = pd.read_csv('df_rec_lookup.csv')
+        df_rec_lookup = pd.read_csv('SpotifyApp/df_rec_lookup.csv')
 
         # Query Using kneighbors
         __, neigh_index = knn_loader.kneighbors(wrangled_features_tracks_df)
