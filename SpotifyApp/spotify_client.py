@@ -11,9 +11,12 @@ import pandas as pd
 import matplotlib as plt 
 from scipy.spatial import distance
 import joblib
+import os
 
-SPOTIFY_API_KEY = '7f15fad76ad8451aafb68fb31e761cdf'
-SPOTIFY_API_KEY_SECRET = '5ce5caec03d54549aebc1987db2a4023'
+load_dotenv()
+
+SPOTIFY_API_KEY = os.getenv('SPOTIFY_API_KEY')
+SPOTIFY_API_KEY_SECRET = os.getenv('SPOTIFY_API_KEY_SECRET')
 redirect_uri = 'http://localhost:8888/callback'
 
 class SpotifyAPI(object):
